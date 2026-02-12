@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Регистрация</title>
+    <style>
+        .form-container { width: 350px; margin-top: 50px; }
+        .helptext { font-size: 0.8em; color: #666; }
+        ul { padding-left: 20px; font-size: 0.8em; color: #666; }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Создать аккаунт</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" style="width:100%; padding:10px; background:#007bff; color:white; border:none;">Зарегистрироваться</button>
+        </form>
+        <p>Уже есть аккаунт? <a href="{% url 'login' %}">Войти</a></p>
+    </div>
+</body>
+</html>
